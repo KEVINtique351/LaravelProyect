@@ -17,22 +17,11 @@ use  App\Http\Controllers\CursoController;
 */
 
 Route::get('/', HomeController::class);
-Route::get('curso',[ CursoController::class,'index'] );
+
+Route::get('cursos',[ CursoController::class, 'index'] );
 
 
-Route::get('cursos', function () {
-    return "BIENVENIDO AL CURSO";
-});
+Route::get('cursos/create',[ CursoController::class,'create']);
 
+Route::get('cursos/{curso}',[ CursoController::class,'show']);
 
-Route::get('cursos/create');
-
-Route::get('cursos/{curso}',);
-
-/*Route::get('cursos/{curso}/{categoria?}', function ($curso, $categoria = null) {
-    if ($categoria) {
-        return "Bienvenido al curso : $curso, de la categoria $categoria";
-    } else {
-        return "BIENVENIDO AL CURSO: $curso";
-    }
-});*/
